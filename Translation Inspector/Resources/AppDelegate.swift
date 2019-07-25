@@ -13,9 +13,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    /// Setting API Client using baseURL
+    private func setupClient() {
+        
+        let baseUrl = Client.shared.baseURL
+        Client.shared.configureClient(Configuration(baseURL: baseUrl))
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        /// Setting Client
+        setupClient()
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        /// Setting Root View Controller where application starts
+        let rootViewController = LaunchViewController()
+        window?.rootViewController = rootViewController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
