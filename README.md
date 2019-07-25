@@ -1,2 +1,3 @@
-# TranslationInspector
-Board Game for finding synonyms
+# Translation Inspector
+
+Board Game for Finding Synonyms
